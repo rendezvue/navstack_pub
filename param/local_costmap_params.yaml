@@ -9,9 +9,3 @@ local_costmap:
   width: 1.0
   height: 1.0
 
-  plugins:
-    - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
-
-  obstacle_layer:
-    observation_sources: point_cloud_sensor
-    point_cloud_sensor: {sensor_frame: velodyne, data_type: PointCloud, topic: /velodyne_points_pc1, marking: true, clearing: true}
