@@ -12,6 +12,7 @@
     <rosparam file="$(find navstack_pub)/param/local_costmap_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find navstack_pub)/param/global_costmap_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find navstack_pub)/param/base_local_planner_params.yaml" command="load" />
+    <remap from="/cmd_vel" to="/omniwheel_agv/omniwheel_velocity_controller/cmd_vel" />
   </node>
 
 </launch>
