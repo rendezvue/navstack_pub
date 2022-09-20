@@ -6,6 +6,14 @@
   
   <!--<remap from="/projected_map" to="/map"/>-->
 
+  <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="convert_cloud" output="screen">
+    <remap from="/points2_in" to="/velodyne_points" />
+    <remap from="/points_out" to="/velodyne_points_pc1" />
+  </node>
+
+  <arg name="bt_file" default="$(find cvt_pcd2octomap)/launch/Nthing_2.bt" />
+  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" output="screen" args="$(arg bt_file)" />
+
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <rosparam file="$(find navstack_pub)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find navstack_pub)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
@@ -14,5 +22,6 @@
     <rosparam file="$(find navstack_pub)/param/base_local_planner_params.yaml" command="load" />
     <remap from="/cmd_vel" to="/omniwheel_agv/omniwheel_velocity_controller/cmd_vel" />
   </node>
+
 
 </launch>
