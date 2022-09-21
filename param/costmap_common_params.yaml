@@ -1,5 +1,6 @@
 
-footprint: [[-0.14, -0.14], [-0.14, 0.14], [0.14, 0.14], [0.14, -0.14]]
+#footprint: [[-0.25, -0.45], [-0.25, 0.45], [0.25, 0.45], [0.25, -0.45]]
+footprint: [[-0.45, -0.25], [-0.45, 0.25], [0.45, 0.25], [0.45, -0.25]]
 #map_topic: /hdl_global_localization/bbs/gridmap
 map_topic: /projected_map
 subscribe_to_updates: true
@@ -24,8 +25,10 @@ obstacle_layer:
     point_cloud_sensor: {sensor_frame: velodyne, data_type: PointCloud, topic: /velodyne_points_pc1, marking: true, clearing: true}
     obstacle_range: 2
     raytrace_range: 2.5
-    max_obstacle_height: 2
+    max_obstacle_height: 1
     min_obstacle_height: -2
 
-inflation_layer:
-  inflation_radius: 0.2
+inflation_layer:  
+  inflation_radius: 0.1
+  cost_scaling_factor: 3.0
+
