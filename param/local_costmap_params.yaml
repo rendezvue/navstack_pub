@@ -4,8 +4,8 @@ local_costmap:
   transform_tolerance: 0.05
   static_map: false
   rolling_window: true
-  resolution: 0.1
+  resolution: 0.5
   inflation_radius: 0.1
-  width: 1.0
-  height: 1.0
+  width: 10.0
+  height: 10.0
 

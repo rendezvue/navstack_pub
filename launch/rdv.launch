@@ -11,7 +11,7 @@
     <remap from="/points_out" to="/velodyne_points_pc1" />
   </node>
 
-  <arg name="bt_file" default="$(find cvt_pcd2octomap)/launch/Nthing_2.bt" />
+  <arg name="bt_file" default="$(find cvt_pcd2octomap)/launch/Nthing_only_con.bt" />
   <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" output="screen" args="$(arg bt_file)" />
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
@@ -20,6 +20,9 @@
     <rosparam file="$(find navstack_pub)/param/local_costmap_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find navstack_pub)/param/global_costmap_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find navstack_pub)/param/base_local_planner_params.yaml" command="load" />
+
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+
     <remap from="/cmd_vel" to="/omniwheel_agv/omniwheel_velocity_controller/cmd_vel" />
   </node>
 
