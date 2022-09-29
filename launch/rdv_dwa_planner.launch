@@ -11,7 +11,7 @@
     <remap from="/points_out" to="/velodyne_points_pc1" />
   </node>
 
-  <arg name="bt_file" default="$(find cvt_pcd2octomap)/launch/Nthing_2.bt" />
+  <arg name="bt_file" default="$(find cvt_pcd2octomap)/rdv_map_files/Nthing_only_con_mod.bt" />
   <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" output="screen" args="$(arg bt_file)" />
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
@@ -27,7 +27,7 @@
     <!--<param name="base_global_planner" value="navfn/NavfnROS"/>-->
     
   
-    <remap from="/cmd_vel" to="/omniwheel_agv/omniwheel_velocity_controller/cmd_vel" />
+    <!--<remap from="/cmd_vel" to="/omniwheel_agv/omniwheel_velocity_controller/cmd_vel" />-->
   
 
   </node>
