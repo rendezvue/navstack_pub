@@ -7,7 +7,7 @@
   
   <arg name="lidar_topic" default="/velodyne_points" />
   <!--/hesai/pandar_points-->  
-  <arg name="bt_file" default="$(find cvt_pcd2octomap)/rdv_map_files/aihub_4floor.bt" />
+  <arg name="bt_file" default="$(find cvt_pcd2octomap)/rdv_map_files/aihub_4floor_mod.bt" />
 
   <!--<node pkg="point_cloud_converter" type="point_cloud_converter_node" name="convert_cloud" output="screen">
     <remap from="/points2_in" to="$(arg lidar_topic)" />

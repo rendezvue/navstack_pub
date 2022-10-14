@@ -5,13 +5,13 @@
   <!-- Publish: /cmd_vel -->
   
   <!--<remap from="/projected_map" to="/map"/>-->
-
-  <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="convert_cloud" output="screen">
+  <arg name="lidar_topic" default="/velodyne_points" />
+  <!-- <node pkg="point_cloud_converter" type="point_cloud_converter_node" name="convert_cloud" output="screen">
     <remap from="/points2_in" to="/velodyne_points" />
     <remap from="/points_out" to="/velodyne_points_pc1" />
-  </node>
+  </node> -->
 
-  <arg name="bt_file" default="$(find cvt_pcd2octomap)/launch/Nthing_2.bt" />
+  <arg name="bt_file" default="$(find cvt_pcd2octomap)/rdv_map_files/aihub_4floor_mod.bt" />
   <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" output="screen" args="$(arg bt_file)" />
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
