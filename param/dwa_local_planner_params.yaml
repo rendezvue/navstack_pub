@@ -1,16 +1,20 @@
 DWAPlannerROS:
-  acc_lim_x: 2.0
-  acc_lim_y: 2.0
-  acc_lim_th: 2.0
-  max_trans_vel: 1
-  min_trans_vel: 0.01
-  max_vel_x: 0.5
-  min_vel_x: -1.0
-  max_vel_y: 1
-  min_vel_y: -1
+  max_vel_trans: 0.4
+  min_vel_trans: 0.1
+  max_vel_x: 0.2
+  min_vel_x: -0.2
+  max_vel_y: 0.2
+  min_vel_y: -0.2
 
-  max_rot_vel: 1.0
-  min_rot_vel: 0.8
+  max_vel_theta: 0.1
+  min_vel_theta: 0.03
+  acc_lim_x: 3.0
+  acc_lim_y: 3.0
+  acc_lim_theta: 1.2
+  acc_lim_trans: 0.1
+
+  #max_rot_vel: 0.7
+  #min_rot_vel: 0.4
 
   yaw_goal_tolerance: 0.17
   xy_goal_tolerance: 0.17
@@ -21,7 +25,7 @@ DWAPlannerROS:
   vx_samples: 10
   vy_samples: 0
   vtheta_samples: 20
-  controller_frequency: 10
+  controller_frequency: 20
   penalize_negative_x: true
 
   path_distance_bias: 1.0

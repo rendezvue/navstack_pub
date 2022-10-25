@@ -1,11 +1,17 @@
 local_costmap:
-  update_frequency: 1
-  publish_frequency: 1
-  static_map: false
-  rolling_window: true
   resolution: 0.5
   inflation_radius: 0.1
   width: 10.0
   height: 10.0
+  footprint_padding: 0.01
+inflation_layer:  
+  cost_scaling_factor: 12
+  inflation_radius: 1
+static_layer:
+  enabled: false
+  
+
 
 transform_tolerance: 1.1
+update_frequency: 20
+publish_frequency: 20

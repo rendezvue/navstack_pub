@@ -22,8 +22,11 @@
     <!--<rosparam file="$(find navstack_pub)/param/base_local_planner_params.yaml" command="load" />-->
     <rosparam file="$(find navstack_pub)/param/eband_local_planner_params.yaml" command="load" />
     <param name="base_local_planner" value="eband_local_planner/EBandPlannerROS"/>
-  
-    <!--<remap from="/cmd_vel" to="/omniwheel_agv/omniwheel_velocity_controller/cmd_vel" />-->
+    <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+    <param name="controller_frequency" value="20"/>
+    <param name="planner_frequency" value="0"/>
+
+    <remap from="/cmd_vel" to="/omniwheel_agv/omniwheel_velocity_controller/cmd_vel" />
   
 
   </node>
